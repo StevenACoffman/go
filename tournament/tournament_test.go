@@ -2,7 +2,6 @@ package tournament
 
 import (
 	"bytes"
-	"io"
 	"strings"
 	"testing"
 )
@@ -11,8 +10,6 @@ import (
 //
 // Note that unlike other tracks the Go version of the tally function
 // should not ignore errors. It's not idiomatic Go to ignore errors.
-
-var _ func(io.Reader, io.Writer) error = Tally
 
 // These test what testers call the happy path, where there's no error.
 var happyTestCases = []struct {
