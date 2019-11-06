@@ -26,6 +26,9 @@ func Build(records []Record) (*Node, error) {
 		} else {
 			return nil, fmt.Errorf("dup")
 		}
+		if rec.Parent < rec.ID {
+			return nil, fmt.Errorf("min")
+		}
 		if rec.Parent != rec.ID {
 			parent, ok := nodes[rec.Parent]
 			if !ok {
